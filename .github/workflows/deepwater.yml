@@ -5,7 +5,7 @@ on:
     - cron: '23 20 * * *' # 04:23 Asia/Shanghai; GitHub may delay scheduled runs.
   workflow_dispatch:
   push:
-    branches: [main, feat/deepwater-v2]
+    branches: [main, feat/profile-visual-refinement]
     paths:
       - '.github/workflows/deepwater.yml'
       - '.github/profile/**'
@@ -36,7 +36,7 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            assets/generated/deepwater-snake.svg?palette=github-dark&color_snake=#85ecff&color_dots=#101e33,#133a65,#1768a1,#21a8d8,#85ecff
+            assets/generated/deepwater-snake.svg?palette=github-dark&color_snake=#b4d2e3&color_dots=#1b2632,#304b62,#4c718d,#739db7,#b4d2e3
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Check optional Metrics token
@@ -85,14 +85,14 @@ jobs:
           retries: 1
           extras_css: |
             :root {
-              --color-text: #c6e4ff;
-              --color-text-muted: #7795b1;
-              --color-text-accent: #77d9ff;
-              --color-background: #070d18;
-              --color-border: #19314d;
+              --color-text: #e0e6eb;
+              --color-text-muted: #97a6b3;
+              --color-text-accent: #a8c8da;
+              --color-background: #0d1117;
+              --color-border: #28313c;
             }
-            svg { background: #070d18; }
-            h1, h2, h3, strong { color: #d9f2ff !important; }
+            svg { background: #0d1117; }
+            h1, h2, h3, strong { color: #e0e6eb !important; }
       - name: Prepare and validate generated SVGs
         env:
           GH_TOKEN: ${{ github.token }}

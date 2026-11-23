@@ -1,68 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="444" viewBox="0 0 580 444" role="img" aria-labelledby="title desc">
-<title id="title">EchoSoul</title><desc id="desc">EchoSoul: a JavaFX desktop chat app with persona-driven conversations, pluggable LLM providers, local history and optional speech. Conceptual interface illustration.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="420" viewBox="0 0 580 420" role="img" aria-labelledby="title desc">
+<title id="title">EchoSoul</title><desc id="desc">EchoSoul: a JavaFX desktop AI chat app with persona-driven conversations, pluggable models and local history. Conceptual interface illustration.</desc>
 <defs>
-<radialGradient id="paper"><stop stop-color="#0e2640"/><stop offset=".65" stop-color="#080f1c"/><stop offset="1" stop-color="#070d18"/></radialGradient>
-<linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
-<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
-<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#070f1c"/><stop offset=".55" stop-color="#10243c"/><stop offset="1" stop-color="#17374e"/></linearGradient>
-<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset=".5" stop-color="#182444"/><stop offset="1" stop-color="#253a61"/></linearGradient>
-<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#061421"/><stop offset=".6" stop-color="#10324a"/><stop offset="1" stop-color="#1e5364"/></linearGradient>
-<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#07121c"/><stop offset=".55" stop-color="#142b45"/><stop offset="1" stop-color="#23435c"/></linearGradient>
-<radialGradient id="glow"><stop stop-color="#399fff" stop-opacity=".28"/><stop offset="1" stop-color="#399fff" stop-opacity="0"/></radialGradient>
-<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#c8f0ff" stop-opacity=".94"/><stop offset=".5" stop-color="#59a8cd" stop-opacity=".9"/><stop offset="1" stop-color="#183b65"/></linearGradient>
-<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000b1a" flood-opacity=".85"/><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#249fff" flood-opacity=".35"/></filter>
-<filter id="bloom" x="-.6" y="-.6" width="2.2" height="2.2"><feGaussianBlur stdDeviation="10"/></filter>
-<filter id="water" x="-.15" y="-.35" width="1.3" height="1.7" color-interpolation-filters="sRGB">
-<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="18s" values=".009 .025;.013 .035;.009 .025" repeatCount="indefinite"/></feTurbulence>
-<feDisplacementMap in="SourceGraphic" in2="waves" scale="16" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="12s" values="12;23;12" repeatCount="indefinite"/></feDisplacementMap>
+<radialGradient id="atmosphere"><stop stop-color="#254158" stop-opacity=".62"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#263744"/><stop offset="1" stop-color="#111b25"/></linearGradient>
+<linearGradient id="edge" x2=".9" y2="1"><stop stop-color="#91afbf" stop-opacity=".7"/><stop offset=".5" stop-color="#486477" stop-opacity=".35"/><stop offset="1" stop-color="#263845" stop-opacity=".2"/></linearGradient>
+<linearGradient id="silver" x2=".7" y2="1"><stop stop-color="#cedce2"/><stop offset=".4" stop-color="#a2bbc9"/><stop offset="1" stop-color="#496b82"/></linearGradient>
+<linearGradient id="waterline"><stop stop-color="#6e9ab5" stop-opacity="0"/><stop offset=".5" stop-color="#90bbd4" stop-opacity=".6"/><stop offset="1" stop-color="#6e9ab5" stop-opacity="0"/></linearGradient>
+<filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>
+<filter id="bloom" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="12"/></filter>
+<filter id="water" x="-.1" y="-.3" width="1.2" height="1.6" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="20s" values=".009 .025;.012 .032;.009 .025" repeatCount="indefinite"/></feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="waves" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="14s" values="8;15;8" repeatCount="indefinite"/></feDisplacementMap>
 </filter>
-<linearGradient id="beam"><stop stop-color="#3ca7ff" stop-opacity="0"/><stop offset=".5" stop-color="#a9efff" stop-opacity=".9"/><stop offset="1" stop-color="#3ca7ff" stop-opacity="0"/></linearGradient>
-<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
 </defs>
 <style>
-text {font-family:Arial,Helvetica,sans-serif;fill:#d7eeff}
-.mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
-.white {fill:#d7eeff}
-.dim {fill:#718eac}
-.accent {fill:#7edfff}
-.water-still {display:none}
-.float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
-@keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
-@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}.water-motion{display:none}.water-still{display:inline}}
+text {font-family:Arial,Helvetica,sans-serif;fill:#e0e6eb}
+.dim {fill:#97a6b3}
+.still {display:none}
+.float {animation:drift 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes drift {0%,100% {transform:translateY(0)}50% {transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce) {.float {animation:none}.motion {display:none}.still {display:inline}}
 </style>
+<rect width="580" height="420" fill="#0d1117"/>
 
-<rect width="580" height="444" fill="#070d18"/>
-<defs><clipPath id="art"><rect x="14" y="14" width="552" height="322"/></clipPath></defs>
-<g clip-path="url(#art)"><rect x="14" y="14" width="552" height="322" fill="url(#mint)"/>
-<ellipse cx="400" cy="80" rx="280" ry="240" fill="url(#glow)"/>
-<g transform="translate(91 75) rotate(-7 202 120)"><g class="float" filter="url(#shadow)">
-<rect width="405" height="227" rx="10" fill="#0a1525" stroke="#3a89bb" stroke-width="1.5"/>
-<path d="M0 28H405M112 28V227" stroke="#4f6b61" stroke-opacity=".6"/>
-<circle cx="14" cy="14" r="3" fill="#f0b4a0"/><circle cx="25" cy="14" r="3" fill="#e0cf93"/><circle cx="36" cy="14" r="3" fill="#abd0b2"/>
-<text x="202" y="18" text-anchor="middle" class="white" font-size="10">EchoSoul</text>
-<text x="16" y="54" class="white" font-size="11">Your personas</text>
-<rect x="9" y="67" width="94" height="31" rx="5" fill="#123958"/>
-<circle cx="26" cy="82" r="9" fill="#64b6d6"/><text x="43" y="86" class="white" font-size="9">Conversation</text>
-<path d="M17 119H86M17 138H70M17 157H80" stroke="#417898" stroke-width="5" stroke-linecap="round" opacity=".6"/>
-<text x="132" y="55" class="white" font-size="13">A little more human.</text>
-<rect x="179" y="77" width="205" height="33" rx="8" fill="#194466"/>
-<text x="192" y="98" font-size="10">Where should we begin?</text>
-<rect x="130" y="123" width="218" height="49" rx="8" fill="#152c46"/>
-<text x="142" y="143" class="white" font-size="10">With an idea. And a conversation.</text>
-<path d="M143 155H284" stroke="#417898" stroke-width="3" stroke-linecap="round"/>
-<rect x="130" y="188" width="256" height="24" rx="12" fill="#0c2035" stroke="#254e72"/>
-<text x="143" y="204" class="white" font-size="9">Say something...</text>
-<path d="M367 196L373 200L367 204" fill="none" stroke="#bdd9c9" stroke-width="1.5"/>
-</g></g><text x="39" y="315" font-size="10" class="white mono">LOCAL FIRST · MULTIPLE AI PROVIDERS</text>
-
-<text x="32" y="43" font-size="10" class="white mono">01 / SELECTED WORK</text></g>
-<rect x="14" y="14" width="552" height="322" fill="none" stroke="#247db2" stroke-opacity=".6"/>
-<path d="M14 85V14H156M424 336H566V265" fill="none" stroke="#75d8ff" stroke-opacity=".7"/>
-<text x="16" y="377" font-size="30" letter-spacing="-1.2">EchoSoul</text>
-<text x="16" y="405" font-size="18" class="dim">Persona-driven AI / JavaFX</text>
-<path d="M535 385L552 402M535 402H552V385" fill="none" stroke="#76c9f6" stroke-width="2"/>
-<path d="M16 426H564" stroke="#19314d" stroke-width="1"/>
+<defs><clipPath id="art"><rect width="580" height="306" rx="14"/></clipPath></defs>
+<g clip-path="url(#art)"><ellipse cx="290" cy="169" rx="288" ry="145" fill="url(#atmosphere)"/>
+<g transform="translate(85 48) rotate(-6 205 112)" filter="url(#shadow)">
+<rect width="410" height="224" rx="14" fill="url(#glass)" stroke="url(#edge)" stroke-width="1.5"/>
+<path d="M0 32H410M96 32V224" stroke="#496172" stroke-opacity=".35"/>
+<g fill="#788e9e"><circle cx="18" cy="17" r="3"/><circle cx="30" cy="17" r="3"/><circle cx="42" cy="17" r="3"/></g>
+<rect x="13" y="52" width="70" height="36" rx="8" fill="#324b5d"/>
+<circle cx="31" cy="70" r="7" fill="#91b4c8"/>
+<path d="M46 70H69M22 111H71M22 134H61M22 157H68" fill="none" stroke="#668496" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+<rect x="195" y="54" width="192" height="44" rx="12" fill="#496c84"/>
+<path d="M213 72H356M213 83H318" stroke="#acc3d1" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+<rect x="120" y="115" width="223" height="59" rx="12" fill="#293d4d"/>
+<path d="M139 134H317M139 146H285M139 158H238" stroke="#92aab9" stroke-width="3" stroke-linecap="round" opacity=".6"/>
+<rect x="120" y="188" width="267" height="22" rx="11" fill="#16232e" stroke="#3c5262"/>
+<path d="M367 195L373 199L367 203" fill="none" stroke="#a6c5d6" stroke-width="1.6"/>
+</g>
+</g>
+<text x="10" y="355" font-size="42" letter-spacing="-1.5">EchoSoul</text>
+<text x="10" y="394" font-size="25" class="dim">AI conversations</text>
+<path d="M533 332H551V350M551 332L530 353" fill="none" stroke="#8fa9bc" stroke-width="2"/>
 
 </svg>

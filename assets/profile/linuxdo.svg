@@ -1,60 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="444" viewBox="0 0 580 444" role="img" aria-labelledby="title desc">
-<title id="title">LinuxDo Android</title><desc id="desc">Mingrui Ai&#x27;s fork of xuemk/linuxdo-android, a Kotlin Android client for LinuxDo. Conceptual interface illustration, not a product screenshot.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="420" viewBox="0 0 580 420" role="img" aria-labelledby="title desc">
+<title id="title">LinuxDo Android</title><desc id="desc">Mingrui Ai&#x27;s fork of xuemk/linuxdo-android, a Kotlin Android community client. Conceptual interface illustration.</desc>
 <defs>
-<radialGradient id="paper"><stop stop-color="#0e2640"/><stop offset=".65" stop-color="#080f1c"/><stop offset="1" stop-color="#070d18"/></radialGradient>
-<linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
-<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
-<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#070f1c"/><stop offset=".55" stop-color="#10243c"/><stop offset="1" stop-color="#17374e"/></linearGradient>
-<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset=".5" stop-color="#182444"/><stop offset="1" stop-color="#253a61"/></linearGradient>
-<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#061421"/><stop offset=".6" stop-color="#10324a"/><stop offset="1" stop-color="#1e5364"/></linearGradient>
-<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#07121c"/><stop offset=".55" stop-color="#142b45"/><stop offset="1" stop-color="#23435c"/></linearGradient>
-<radialGradient id="glow"><stop stop-color="#399fff" stop-opacity=".28"/><stop offset="1" stop-color="#399fff" stop-opacity="0"/></radialGradient>
-<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#c8f0ff" stop-opacity=".94"/><stop offset=".5" stop-color="#59a8cd" stop-opacity=".9"/><stop offset="1" stop-color="#183b65"/></linearGradient>
-<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000b1a" flood-opacity=".85"/><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#249fff" flood-opacity=".35"/></filter>
-<filter id="bloom" x="-.6" y="-.6" width="2.2" height="2.2"><feGaussianBlur stdDeviation="10"/></filter>
-<filter id="water" x="-.15" y="-.35" width="1.3" height="1.7" color-interpolation-filters="sRGB">
-<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="18s" values=".009 .025;.013 .035;.009 .025" repeatCount="indefinite"/></feTurbulence>
-<feDisplacementMap in="SourceGraphic" in2="waves" scale="16" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="12s" values="12;23;12" repeatCount="indefinite"/></feDisplacementMap>
+<radialGradient id="atmosphere"><stop stop-color="#254158" stop-opacity=".62"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#263744"/><stop offset="1" stop-color="#111b25"/></linearGradient>
+<linearGradient id="edge" x2=".9" y2="1"><stop stop-color="#91afbf" stop-opacity=".7"/><stop offset=".5" stop-color="#486477" stop-opacity=".35"/><stop offset="1" stop-color="#263845" stop-opacity=".2"/></linearGradient>
+<linearGradient id="silver" x2=".7" y2="1"><stop stop-color="#cedce2"/><stop offset=".4" stop-color="#a2bbc9"/><stop offset="1" stop-color="#496b82"/></linearGradient>
+<linearGradient id="waterline"><stop stop-color="#6e9ab5" stop-opacity="0"/><stop offset=".5" stop-color="#90bbd4" stop-opacity=".6"/><stop offset="1" stop-color="#6e9ab5" stop-opacity="0"/></linearGradient>
+<filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>
+<filter id="bloom" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="12"/></filter>
+<filter id="water" x="-.1" y="-.3" width="1.2" height="1.6" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="20s" values=".009 .025;.012 .032;.009 .025" repeatCount="indefinite"/></feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="waves" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="14s" values="8;15;8" repeatCount="indefinite"/></feDisplacementMap>
 </filter>
-<linearGradient id="beam"><stop stop-color="#3ca7ff" stop-opacity="0"/><stop offset=".5" stop-color="#a9efff" stop-opacity=".9"/><stop offset="1" stop-color="#3ca7ff" stop-opacity="0"/></linearGradient>
-<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
 </defs>
 <style>
-text {font-family:Arial,Helvetica,sans-serif;fill:#d7eeff}
-.mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
-.white {fill:#d7eeff}
-.dim {fill:#718eac}
-.accent {fill:#7edfff}
-.water-still {display:none}
-.float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
-@keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
-@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}.water-motion{display:none}.water-still{display:inline}}
+text {font-family:Arial,Helvetica,sans-serif;fill:#e0e6eb}
+.dim {fill:#97a6b3}
+.still {display:none}
+.float {animation:drift 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes drift {0%,100% {transform:translateY(0)}50% {transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce) {.float {animation:none}.motion {display:none}.still {display:inline}}
 </style>
+<rect width="580" height="420" fill="#0d1117"/>
 
-<rect width="580" height="444" fill="#070d18"/>
-<defs><clipPath id="art"><rect x="14" y="14" width="552" height="322"/></clipPath></defs>
-<g clip-path="url(#art)"><rect x="14" y="14" width="552" height="322" fill="url(#orange)"/>
-<ellipse cx="330" cy="100" rx="300" ry="260" fill="url(#glow)"/>
-<g transform="translate(212 46) rotate(14 82 140)"><g class="float-slow" filter="url(#shadow)">
-<rect width="168" height="304" rx="23" fill="#192120" stroke="url(#chrome)" stroke-width="4"/><rect x="8" y="8" width="152" height="288" rx="16" fill="#101d31"/>
-<rect x="61" y="12" width="46" height="10" rx="5" fill="#192120"/>
-<circle cx="32" cy="56" r="13" fill="#67cfff"/><text x="54" y="62" font-size="16" letter-spacing="-.5">LINUX DO</text>
-<path d="M20 82H148" stroke="#244966"/><text x="20" y="105" font-size="11">Community, connected.</text>
-<rect x="18" y="120" width="132" height="44" rx="5" fill="#18334c"/><circle cx="34" cy="137" r="7" fill="#c2d8d3"/><path d="M49 135H132M49 145H113" stroke="#3b6182" stroke-width="4"/>
-<rect x="18" y="174" width="132" height="44" rx="5" fill="#18334c"/><circle cx="34" cy="191" r="7" fill="#d7c2b2"/><path d="M49 189H132M49 199H104" stroke="#3b6182" stroke-width="4"/>
-<rect x="18" y="228" width="132" height="44" rx="5" fill="#18334c"/><circle cx="34" cy="245" r="7" fill="#c6c4de"/><path d="M49 243H132M49 253H118" stroke="#3b6182" stroke-width="4"/>
-</g></g><text x="52" y="173" font-size="58" class="white" opacity=".18" letter-spacing="-3">{ }</text>
-<text x="434" y="240" font-size="54" class="white" opacity=".25">↗</text>
-<text x="39" y="315" font-size="10" class="white mono">EXPLORING OPEN SOURCE · ANDROID</text>
-
-<text x="32" y="43" font-size="10" class="white mono">04 / SELECTED WORK</text></g>
-<rect x="14" y="14" width="552" height="322" fill="none" stroke="#247db2" stroke-opacity=".6"/>
-<path d="M14 85V14H156M424 336H566V265" fill="none" stroke="#75d8ff" stroke-opacity=".7"/>
-<text x="16" y="377" font-size="30" letter-spacing="-1.2">LinuxDo Android</text>
-<text x="16" y="405" font-size="18" class="dim">Community client / Kotlin · Fork</text>
-<path d="M535 385L552 402M535 402H552V385" fill="none" stroke="#76c9f6" stroke-width="2"/>
-<path d="M16 426H564" stroke="#19314d" stroke-width="1"/>
+<defs><clipPath id="art"><rect width="580" height="306" rx="14"/></clipPath></defs>
+<g clip-path="url(#art)"><ellipse cx="290" cy="169" rx="288" ry="145" fill="url(#atmosphere)"/>
+<g transform="translate(211 10) rotate(12 84 140)" filter="url(#shadow)">
+<rect width="168" height="282" rx="25" fill="#15212c" stroke="url(#edge)" stroke-width="3"/>
+<rect x="8" y="8" width="152" height="266" rx="18" fill="url(#glass)"/>
+<rect x="62" y="12" width="44" height="8" rx="4" fill="#101820"/>
+<circle cx="34" cy="54" r="13" fill="#7d9fb4"/>
+<path d="M57 50H130M57 59H109" stroke="#9ab3c3" stroke-width="4" stroke-linecap="round"/>
+<path d="M20 79H148" stroke="#617c8f" stroke-opacity=".35"/>
+<rect x="18" y="95" width="132" height="44" rx="8" fill="#2b4050"/>
+<rect x="18" y="151" width="132" height="44" rx="8" fill="#2b4050"/>
+<rect x="18" y="207" width="132" height="44" rx="8" fill="#2b4050"/>
+<g fill="#728fa2"><circle cx="34" cy="112" r="7"/><circle cx="34" cy="168" r="7"/><circle cx="34" cy="224" r="7"/></g>
+<path d="M51 109H132M51 120H107M51 165H132M51 176H116M51 221H132M51 232H101" stroke="#8aa3b4" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+</g>
+</g>
+<text x="10" y="355" font-size="42" letter-spacing="-1.5">LinuxDo Android</text>
+<text x="10" y="394" font-size="25" class="dim">Community client · Fork</text>
+<path d="M533 332H551V350M551 332L530 353" fill="none" stroke="#8fa9bc" stroke-width="2"/>
 
 </svg>

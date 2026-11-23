@@ -1,8 +1,8 @@
-# Deepwater / v2
+# Deepwater / visual refinement
 
 Original artwork inspired by Unseen Studio's immersive presentation, adapted to
-GitHub README constraints: near-black panels, refracted typography, a luminous
-blue cube above water, glass project covers, fine rules and diagonal arrows.
+GitHub README constraints: a neutral dark canvas, refracted typography, a muted
+blue cube above water, glass project illustrations and generous typography.
 No reference-site photographs, fonts, logo or source code are included. Interface
 illustrations are conceptual covers, not screenshots. LinuxDo is labeled as a fork.
 
@@ -15,6 +15,12 @@ frequency and displacement strength. CSS supplies slow object movement.
 `prefers-reduced-motion` replaces the animated hero group with an unfiltered
 static wordmark and disables CSS movement. There is no WebGL or cursor tracking.
 
+The default canvas is `#0d1117`, matching GitHub's default dark theme. Silver,
+slate and desaturated blue replace the previous bright cyan outlines. Only the
+hero, two section titles, four project covers and contact artwork remain. Each
+project has a large name and one short descriptor; the covers contain no small
+interface text. The data dashboard and biography are in native disclosures.
+
 ## Daily generation
 
 `.github/workflows/deepwater.yml` runs at **04:23 Asia/Shanghai** (20:23 UTC)
@@ -23,7 +29,9 @@ Actions can run late; GitHub may disable schedules after 60 days of repository
 inactivity. A single job commits generated assets together, only when changed.
 
 - **City:** `yoshi389111/github-profile-3d-contrib`, pinned v0.9.3, customized
-  using `.github/profile/city.json`.
+  using `.github/profile/city.json`. `prepare_generated.py` retains the original
+  blocks and growth animation, removes the extra charts and counters, and uses
+  a shallower projection with calculated vertical bounds for a compact composition.
 - **Snake:** `Platane/snk/svg-only`, pinned v3, customized blue palette and an
   opaque background for light and dark GitHub themes.
 - **Metrics:** `lowlighter/metrics`, pinned v3.34, includes base statistics,
@@ -57,8 +65,11 @@ are separate from the already-operational city, snake and public dashboard.
 ## Editing and rendering
 
 The original bilingual biography and project notes remain available as text in
-a disclosure. Alt text describes every meaningful image. Navigation and project
-links are native GitHub links. Category pills are visual labels, not filters.
-GitHub still controls the surrounding page, margins and profile sidebar; the
-dark panels cannot recolor that surrounding interface. Generated graphics may
-remain cached briefly after a successful update.
+a disclosure. Alt text describes every meaningful image. Project and contact
+links are native GitHub links. GitHub controls the surrounding page, margins and
+profile sidebar; other GitHub themes may expose the dark artwork's boundaries.
+Generated graphics may remain cached briefly after a successful update.
+
+Visual reference: https://unseen.co/projects/
+Daily generators: https://github.com/yoshi389111/github-profile-3d-contrib,
+https://github.com/Platane/snk and https://github.com/lowlighter/metrics.

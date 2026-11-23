@@ -1,11 +1,11 @@
 {
   "type": "normal",
   "fileName": "deepwater-city.svg",
-  "backgroundColor": "#070d18",
-  "foregroundColor": "#c6e4ff",
-  "strongColor": "#77d9ff",
-  "weakColor": "#6082a0",
-  "radarColor": "#299cff",
+  "backgroundColor": "#0d1117",
+  "foregroundColor": "#e0e6eb",
+  "strongColor": "#a8c8da",
+  "weakColor": "#97a6b3",
+  "radarColor": "#638ca8",
   "growingAnimation": true,
-  "contribColors": ["#101e33", "#133a65", "#1768a1", "#21a8d8", "#85ecff"]
+  "contribColors": ["#1b2632", "#304b62", "#4c718d", "#739db7", "#b4d2e3"]
 }
