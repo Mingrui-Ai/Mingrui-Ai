@@ -70,7 +70,7 @@ parts.append(f'<text x="646" y="274" font-size="18">Recent public activity / {le
 labels = [('PushEvent', 'Push events'), ('PullRequestEvent', 'Pull request events'), ('IssuesEvent', 'Issue events'), ('IssueCommentEvent', 'Issue comments'), ('CreateEvent', 'Branches & repositories created')]
 for i, (kind, label) in enumerate(labels):
     y = 312 + i * 34
-    parts.append(f'<text x="646" y="{y}" font-size="14" class="dim">{label}</text><text x="1156" y="{y}" text-anchor="end" font-size="18">{types[kind]}</text>')
+    parts.append(f'<text x="646" y="{y}" font-size="14" class="dim">{escape(label)}</text><text x="1156" y="{y}" text-anchor="end" font-size="18">{types[kind]}</text>')
 parts.append(f'<path d="M44 530H1156" stroke="#19314d"/><text x="44" y="564" class="mono dim" font-size="11">UPDATED {now:%Y-%m-%d %H:%M} UTC+08</text><text x="1156" y="564" text-anchor="end" class="mono dim" font-size="11">GITHUB REST API / NO ESTIMATED VALUES</text></svg>')
 (OUT / 'public-pulse.svg').write_text(''.join(parts), encoding='utf-8')
 print(f'Generated factual public dashboard for {USER}; {len(repos)} public repositories.')
