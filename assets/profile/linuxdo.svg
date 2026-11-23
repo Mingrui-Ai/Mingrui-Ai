@@ -1,46 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="580" height="420" viewBox="0 0 580 420" role="img" aria-labelledby="title desc">
-<title id="title">LinuxDo Android</title><desc id="desc">Mingrui Ai&#x27;s fork of xuemk/linuxdo-android, a Kotlin Android community client. Conceptual interface illustration.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="240" viewBox="0 0 840 240" role="img" aria-labelledby="title desc">
+<title id="title">LinuxDo Android</title><desc id="desc">Mingrui Ai&#x27;s fork of xuemk/linuxdo-android, a Kotlin Android community client. Original conceptual illustration.</desc>
 <defs>
-<radialGradient id="atmosphere"><stop stop-color="#254158" stop-opacity=".62"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
-<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#263744"/><stop offset="1" stop-color="#111b25"/></linearGradient>
-<linearGradient id="edge" x2=".9" y2="1"><stop stop-color="#91afbf" stop-opacity=".7"/><stop offset=".5" stop-color="#486477" stop-opacity=".35"/><stop offset="1" stop-color="#263845" stop-opacity=".2"/></linearGradient>
-<linearGradient id="silver" x2=".7" y2="1"><stop stop-color="#cedce2"/><stop offset=".4" stop-color="#a2bbc9"/><stop offset="1" stop-color="#496b82"/></linearGradient>
-<linearGradient id="waterline"><stop stop-color="#6e9ab5" stop-opacity="0"/><stop offset=".5" stop-color="#90bbd4" stop-opacity=".6"/><stop offset="1" stop-color="#6e9ab5" stop-opacity="0"/></linearGradient>
-<filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>
-<filter id="bloom" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="12"/></filter>
-<filter id="water" x="-.1" y="-.3" width="1.2" height="1.6" color-interpolation-filters="sRGB">
-<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="20s" values=".009 .025;.012 .032;.009 .025" repeatCount="indefinite"/></feTurbulence>
-<feDisplacementMap in="SourceGraphic" in2="waves" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="14s" values="8;15;8" repeatCount="indefinite"/></feDisplacementMap>
-</filter>
+<linearGradient id="cyan-purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#818cf8"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<linearGradient id="gold-green" x2="1" y2="1"><stop stop-color="#fbbf24"/><stop offset=".45" stop-color="#f59e0b"/><stop offset="1" stop-color="#10b981"/></linearGradient>
+<linearGradient id="coral" x2="1" y2="1"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+<linearGradient id="pearl" x2=".7" y2="1"><stop stop-color="#f8fafc"/><stop offset=".48" stop-color="#d9f2ff"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient>
+<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#1d2c3e"/><stop offset="1" stop-color="#101821"/></linearGradient>
+<linearGradient id="waterline"><stop stop-color="#22d3ee" stop-opacity="0"/><stop offset=".45" stop-color="#22d3ee" stop-opacity=".6"/><stop offset=".6" stop-color="#818cf8" stop-opacity=".5"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/></linearGradient>
+<radialGradient id="aura"><stop stop-color="#22d3ee" stop-opacity=".2"/><stop offset=".5" stop-color="#818cf8" stop-opacity=".06"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="1.9"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".5"/></filter>
+<filter id="glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="8"/></filter>
+<filter id="soft-glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="3"/></filter>
 </defs>
 <style>
-text {font-family:Arial,Helvetica,sans-serif;fill:#e0e6eb}
-.dim {fill:#97a6b3}
-.still {display:none}
-.float {animation:drift 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes drift {0%,100% {transform:translateY(0)}50% {transform:translateY(-8px)}}
-@media (prefers-reduced-motion:reduce) {.float {animation:none}.motion {display:none}.still {display:inline}}
-</style>
-<rect width="580" height="420" fill="#0d1117"/>
+text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
+.label {fill:#8b949e;font-size:12px;letter-spacing:2.16px}
+.float {animation:float 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.breathe {animation:breathe 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.ripple {animation:ripple 4.5s linear infinite;transform-box:fill-box;transform-origin:center;opacity:0}
+.ripple-two {animation-delay:1.5s}
+.ripple-three {animation-delay:3s}
+.bubble {animation:bubble 5s ease-in-out infinite;opacity:0}
+.bubble-two {animation-delay:2.5s}
+.sheen {animation:sheen 7s ease-in-out infinite;opacity:0}
+.status {animation:status 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes float {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-9px) rotate(3deg)}}
+@keyframes breathe {0%,100% {transform:scale(.93);opacity:.8}50% {transform:scale(1.07);opacity:1}}
+@keyframes ripple {0% {transform:scale(.55);opacity:0}15% {opacity:.5}100% {transform:scale(2.1);opacity:0}}
+@keyframes bubble {0% {transform:translateY(15px);opacity:0}20% {opacity:.6}85% {opacity:.35}100% {transform:translateY(-45px);opacity:0}}
+@keyframes sheen {0%,58% {transform:translateX(-180px);opacity:0}63% {opacity:.48}87% {transform:translateX(940px);opacity:0}100% {transform:translateX(940px);opacity:0}}
+@keyframes status {0%,100% {transform:scale(.85);opacity:.5}50% {transform:scale(1.2);opacity:1}}
+@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
+</style><rect width="840" height="240" fill="#0d1117"/>
 
-<defs><clipPath id="art"><rect width="580" height="306" rx="14"/></clipPath></defs>
-<g clip-path="url(#art)"><ellipse cx="290" cy="169" rx="288" ry="145" fill="url(#atmosphere)"/>
-<g transform="translate(211 10) rotate(12 84 140)" filter="url(#shadow)">
-<rect width="168" height="282" rx="25" fill="#15212c" stroke="url(#edge)" stroke-width="3"/>
-<rect x="8" y="8" width="152" height="266" rx="18" fill="url(#glass)"/>
-<rect x="62" y="12" width="44" height="8" rx="4" fill="#101820"/>
-<circle cx="34" cy="54" r="13" fill="#7d9fb4"/>
-<path d="M57 50H130M57 59H109" stroke="#9ab3c3" stroke-width="4" stroke-linecap="round"/>
-<path d="M20 79H148" stroke="#617c8f" stroke-opacity=".35"/>
-<rect x="18" y="95" width="132" height="44" rx="8" fill="#2b4050"/>
-<rect x="18" y="151" width="132" height="44" rx="8" fill="#2b4050"/>
-<rect x="18" y="207" width="132" height="44" rx="8" fill="#2b4050"/>
-<g fill="#728fa2"><circle cx="34" cy="112" r="7"/><circle cx="34" cy="168" r="7"/><circle cx="34" cy="224" r="7"/></g>
-<path d="M51 109H132M51 120H107M51 165H132M51 176H116M51 221H132M51 232H101" stroke="#8aa3b4" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+<g transform="translate(490 12)">
+<g transform="translate(116 4) rotate(13 56 105)" filter="url(#shadow)">
+<rect width="112" height="208" rx="21" fill="#281e26" stroke="url(#coral)" stroke-width="2"/>
+<rect x="6" y="7" width="100" height="194" rx="16" fill="#201b25"/>
+<rect x="40" y="11" width="32" height="7" rx="3.5" fill="#0d1117"/>
+<circle cx="24" cy="40" r="10" fill="#f97316"/>
+<path d="M43 36H87M43 45H74" stroke="#fdba74" stroke-width="3" stroke-linecap="round"/>
+<rect x="13" y="65" width="86" height="32" rx="7" fill="#fb7185" fill-opacity=".9"/>
+<rect x="13" y="108" width="86" height="32" rx="7" fill="#f97316" fill-opacity=".85"/>
+<rect x="13" y="151" width="86" height="32" rx="7" fill="#fb7185" fill-opacity=".6"/>
+<g fill="#fff1f2"><circle cx="25" cy="77" r="4"/><circle cx="25" cy="120" r="4"/><circle cx="25" cy="163" r="4"/></g>
+<path d="M37 75H88M37 85H73M37 118H88M37 128H78M37 161H88M37 171H68" stroke="#fff1f2" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+</g><path d="M77 173C39 112 62 45 114 28M239 52C283 105 263 170 221 192" stroke="url(#coral)" stroke-width="1.2" fill="none" opacity=".3"/>
 </g>
-</g>
-<text x="10" y="355" font-size="42" letter-spacing="-1.5">LinuxDo Android</text>
-<text x="10" y="394" font-size="25" class="dim">Community client · Fork</text>
-<path d="M533 332H551V350M551 332L530 353" fill="none" stroke="#8fa9bc" stroke-width="2"/>
-
+<text x="296" y="85" font-size="54" font-weight="600" style="fill:#21262d">04</text>
+<text x="52" y="133" font-size="28" font-weight="600" letter-spacing="-.8">LinuxDo Android <tspan font-size="22" font-weight="400">↗</tspan></text>
+<text x="52" y="166" class="label">KOTLIN · ANDROID · FORK</text>
 </svg>

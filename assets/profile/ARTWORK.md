@@ -1,8 +1,8 @@
-# Deepwater / visual refinement
+# Deepwater / liquid gallery
 
 Original artwork inspired by Unseen Studio's immersive presentation, adapted to
-GitHub README constraints: a neutral dark canvas, refracted typography, a muted
-blue cube above water, glass project illustrations and generous typography.
+GitHub README constraints: a neutral dark canvas, a liquid-light gyroscope,
+saturated project illustrations and alternating full-width compositions.
 No reference-site photographs, fonts, logo or source code are included. Interface
 illustrations are conceptual covers, not screenshots. LinuxDo is labeled as a fork.
 
@@ -10,16 +10,20 @@ illustrations are conceptual covers, not screenshots. LinuxDo is labeled as a fo
 
 Run `python scripts/build_profile.py` with Python 3 (standard library only).
 The SVGs are self-contained, with system fonts and no scripts or external assets.
-The hero uses `feTurbulence` + `feDisplacementMap`, with SMIL animating noise
-frequency and displacement strength. CSS supplies slow object movement.
-`prefers-reduced-motion` replaces the animated hero group with an unfiltered
-static wordmark and disables CSS movement. There is no WebGL or cursor tracking.
+The hero uses pure SVG gradients, layered translucent orbits and CSS animation:
+six-second float/tilt, a three-second breathing core, three expanding ripples
+staggered by 1.5 seconds, and a restrained seven-second wordmark highlight.
+Two bubbles rise beside the seal. A teal contact dot breathes decoratively;
+it is not a real-time presence signal. `prefers-reduced-motion` disables these
+animations and keeps a static composition. There is no WebGL or cursor tracking.
 
-The default canvas is `#0d1117`, matching GitHub's default dark theme. Silver,
-slate and desaturated blue replace the previous bright cyan outlines. Only the
-hero, two section titles, four project covers and contact artwork remain. Each
-project has a large name and one short descriptor; the covers contain no small
-interface text. The data dashboard and biography are in native disclosures.
+The canvas is `#0d1117`, matching GitHub's default dark theme. Four 840×240 rows
+alternate illustration and text, with a low-contrast number, a 28px title and
+one 12px uppercase label. Color is concentrated in the subjects: cyan/purple,
+amber/emerald, pearl/ice blue and coral/orange. There are no card frames or tiny
+interface captions. LinuxDo's label retains its fork attribution. The default
+Activity view contains the snake and a 60px data strip; the city and dashboard
+are in ARCHIVE, with the biography in a separate disclosure.
 
 ## Daily generation
 
@@ -32,8 +36,18 @@ inactivity. A single job commits generated assets together, only when changed.
   using `.github/profile/city.json`. `prepare_generated.py` retains the original
   blocks and growth animation, removes the extra charts and counters, and uses
   a shallower projection with calculated vertical bounds for a compact composition.
-- **Snake:** `Platane/snk/svg-only`, pinned v3, customized blue palette and an
-  opaque background for light and dark GitHub themes.
+- **Snake:** `Platane/snk/svg-only`, pinned v3. Preparation keeps the real route
+  and calendar, removes the lower tally bar, uses `#161b22` empty cells, and
+  applies a continuous cyan-to-purple color progression across the body
+  segments. The background covers the complete viewBox, including its negative
+  origin. Calendar and snake animation stop under reduced-motion preferences.
+- **Data strip:** public repository count and top three languages by source
+  bytes come from `public-summary.json`, refreshed by the public REST script.
+  The annual count reuses `contributionCalendar.totalContributions` as rendered
+  in the pinned city generator's summary. It is labeled contributions, not
+  commits. The daily Actions token sees public contributions and repositories;
+  these can differ from the owner's signed-in profile totals. No numbers are
+  hard-coded from screenshots.
 - **Metrics:** `lowlighter/metrics`, pinned v3.34, includes base statistics,
   languages, habits and compact achievements when `METRICS_TOKEN` is set.
 - **Public dashboard:** `scripts/refresh_dashboard.py` always refreshes real

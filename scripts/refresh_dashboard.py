@@ -70,4 +70,10 @@ for i, (kind, label) in enumerate(labels):
     parts.append(f'<text x="650" y="{y}" font-size="23" class="dim">{escape(label)}</text><text x="1176" y="{y}" text-anchor="end" font-size="25">{types[kind]}</text>')
 parts.append(f'<path d="M24 517H1176" stroke="#28313c"/><text x="24" y="559" class="dim" font-size="20">Languages by public source bytes</text><text x="1176" y="559" text-anchor="end" class="dim" font-size="20">{now:%Y-%m-%d %H:%M} UTC+08</text></svg>')
 (OUT / 'public-pulse.svg').write_text(''.join(parts), encoding='utf-8')
+summary = {
+    'public_repositories': len(repos),
+    'top_languages_by_bytes': [name for name, _ in languages.most_common(3)],
+    'updated_at': now.isoformat(),
+}
+(OUT / 'public-summary.json').write_text(json.dumps(summary, indent=2) + '\n', encoding='utf-8')
 print(f'Generated factual public dashboard for {USER}; {len(repos)} public repositories.')

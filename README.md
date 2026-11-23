@@ -1,15 +1,28 @@
 <div align="center">
-  <img src="assets/profile/hero.svg" width="100%" alt="MINGRUI AI — 艾明睿，计算机科学与人工智能探索者。水中折射的文字与悬浮立方体。">
+  <img src="assets/profile/hero.svg" width="100%" alt="MINGRUI AI — 艾明睿，计算机科学与人工智能探索者。悬浮光轨环绕青紫光核，水面涟漪轻缓扩散。">
   <img src="assets/profile/projects.svg" width="100%" alt="Selected work — 点击卡片查看项目。">
-  <a href="https://github.com/Mingrui-Ai/EchoSoul"><img src="assets/profile/echosoul.svg" width="49%" alt="EchoSoul：JavaFX 桌面 AI 聊天，人格驱动、多模型接入、本地历史。"></a>
-  <a href="https://github.com/Mingrui-Ai/ai-job-search-cn"><img src="assets/profile/job-search.svg" width="49%" alt="AI Job Search CN：中文求职助手，JD 解析与可解释匹配，开发中。"></a>
-  <a href="https://github.com/Mingrui-Ai/lil-seal"><img src="assets/profile/lil-seal.svg" width="49%" alt="lil-seal：JavaScript 小海豹网页实验。"></a>
-  <a href="https://github.com/Mingrui-Ai/linuxdo-android"><img src="assets/profile/linuxdo.svg" width="49%" alt="LinuxDo Android：Kotlin 社区客户端，Fork 自 xuemk/linuxdo-android。"></a>
+  <a href="https://github.com/Mingrui-Ai/EchoSoul"><img src="assets/profile/echosoul.svg" width="100%" alt="EchoSoul：JavaFX 桌面 AI 聊天，人格驱动、多模型接入、本地历史。"></a>
+  <a href="https://github.com/Mingrui-Ai/ai-job-search-cn"><img src="assets/profile/job-search.svg" width="100%" alt="AI Job Search CN：中文求职助手，JD 解析与可解释匹配，开发中。"></a>
+  <a href="https://github.com/Mingrui-Ai/lil-seal"><img src="assets/profile/lil-seal.svg" width="100%" alt="lil-seal：JavaScript 小海豹网页实验。"></a>
+  <a href="https://github.com/Mingrui-Ai/linuxdo-android"><img src="assets/profile/linuxdo.svg" width="100%" alt="LinuxDo Android：Kotlin 社区客户端，Fork 自 xuemk/linuxdo-android。"></a>
   <img src="assets/profile/activity.svg" width="100%" alt="Activity — 每日更新的真实 GitHub 贡献。">
-  <img src="assets/generated/city.svg" width="100%" alt="艾明睿的 3D 贡献城市，一年的代码记录。">
-  <img src="assets/generated/deepwater-snake.svg" width="100%" alt="贪吃蛇沿着真实 GitHub 贡献格移动。">
-  <a href="mailto:mingrui.ai@outlook.com"><img src="assets/profile/contact.svg" width="100%" alt="Let's build something. 联系我：mingrui.ai@outlook.com"></a>
+  <img src="assets/generated/deepwater-snake.svg" width="100%" alt="青紫渐变贪吃蛇沿着真实 GitHub 贡献格移动。">
+  <img src="assets/generated/activity-strip.svg" width="100%" alt="每日更新：近一年公开贡献、公开仓库数量，以及公开原创仓库中代码量最多的三种语言。">
 </div>
+
+<details>
+<summary>ARCHIVE · 3D CONTRIBUTION &amp; FULL METRICS</summary>
+
+<img src="assets/generated/city.svg" width="100%" alt="艾明睿的 3D 贡献城市，一年的代码记录。">
+<img src="assets/generated/metrics.svg" width="100%" alt="每日更新的 GitHub 数据面板：公开仓库、语言与近期活动。">
+
+[自动更新记录](https://github.com/Mingrui-Ai/Mingrui-Ai/actions/workflows/deepwater.yml) · [设计与生成说明](assets/profile/ARTWORK.md)
+
+数据条统计近一年**公开贡献**，包含提交、PR、Issue 等；仓库数只统计公开仓库，语言按公开原创仓库的代码字节数排名。详细面板在未配置 Metrics 令牌时使用 GitHub 公开数据。
+
+视觉灵感来自 [Unseen Studio](https://unseen.co/projects/)，插画为原创。贡献图由 [3D Contrib](https://github.com/yoshi389111/github-profile-3d-contrib) 与 [snk](https://github.com/Platane/snk) 生成；数据面板使用 GitHub 公开数据或已配置的 [Metrics](https://github.com/lowlighter/metrics)。
+
+</details>
 
 <details>
 <summary>关于我与项目 · About & projects</summary>
@@ -28,13 +41,6 @@ Computer Science at **South China Agricultural University**, exploring LLMs, AI 
 
 </details>
 
-<details>
-<summary>数据与更新 · GitHub activity</summary>
-
-<img src="assets/generated/metrics.svg" width="100%" alt="每日更新的 GitHub 数据面板：公开仓库、语言与近期活动。">
-
-[自动更新记录](https://github.com/Mingrui-Ai/Mingrui-Ai/actions/workflows/deepwater.yml) · [设计与生成说明](assets/profile/ARTWORK.md)
-
-视觉灵感来自 [Unseen Studio](https://unseen.co/projects/)，插画为原创。贡献图由 [3D Contrib](https://github.com/yoshi389111/github-profile-3d-contrib) 与 [snk](https://github.com/Platane/snk) 生成；数据面板使用 GitHub 公开数据或已配置的 [Metrics](https://github.com/lowlighter/metrics)。
-
-</details>
+<p align="center">
+  <a href="mailto:mingrui.ai@outlook.com"><img src="assets/profile/contact.svg" width="100%" alt="Let's build something. 联系我：mingrui.ai@outlook.com"></a>
+</p>

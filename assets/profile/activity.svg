@@ -1,26 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="86" viewBox="0 0 840 86" role="img" aria-labelledby="title desc">
 <title id="title">Activity</title><desc id="desc">Activity</desc>
 <defs>
-<radialGradient id="atmosphere"><stop stop-color="#254158" stop-opacity=".62"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
-<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#263744"/><stop offset="1" stop-color="#111b25"/></linearGradient>
-<linearGradient id="edge" x2=".9" y2="1"><stop stop-color="#91afbf" stop-opacity=".7"/><stop offset=".5" stop-color="#486477" stop-opacity=".35"/><stop offset="1" stop-color="#263845" stop-opacity=".2"/></linearGradient>
-<linearGradient id="silver" x2=".7" y2="1"><stop stop-color="#cedce2"/><stop offset=".4" stop-color="#a2bbc9"/><stop offset="1" stop-color="#496b82"/></linearGradient>
-<linearGradient id="waterline"><stop stop-color="#6e9ab5" stop-opacity="0"/><stop offset=".5" stop-color="#90bbd4" stop-opacity=".6"/><stop offset="1" stop-color="#6e9ab5" stop-opacity="0"/></linearGradient>
-<filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.8"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000" flood-opacity=".45"/></filter>
-<filter id="bloom" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="12"/></filter>
-<filter id="water" x="-.1" y="-.3" width="1.2" height="1.6" color-interpolation-filters="sRGB">
-<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="20s" values=".009 .025;.012 .032;.009 .025" repeatCount="indefinite"/></feTurbulence>
-<feDisplacementMap in="SourceGraphic" in2="waves" scale="10" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="14s" values="8;15;8" repeatCount="indefinite"/></feDisplacementMap>
-</filter>
+<linearGradient id="cyan-purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#818cf8"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<linearGradient id="gold-green" x2="1" y2="1"><stop stop-color="#fbbf24"/><stop offset=".45" stop-color="#f59e0b"/><stop offset="1" stop-color="#10b981"/></linearGradient>
+<linearGradient id="coral" x2="1" y2="1"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#f97316"/></linearGradient>
+<linearGradient id="pearl" x2=".7" y2="1"><stop stop-color="#f8fafc"/><stop offset=".48" stop-color="#d9f2ff"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient>
+<linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#1d2c3e"/><stop offset="1" stop-color="#101821"/></linearGradient>
+<linearGradient id="waterline"><stop stop-color="#22d3ee" stop-opacity="0"/><stop offset=".45" stop-color="#22d3ee" stop-opacity=".6"/><stop offset=".6" stop-color="#818cf8" stop-opacity=".5"/><stop offset="1" stop-color="#818cf8" stop-opacity="0"/></linearGradient>
+<radialGradient id="aura"><stop stop-color="#22d3ee" stop-opacity=".2"/><stop offset=".5" stop-color="#818cf8" stop-opacity=".06"/><stop offset="1" stop-color="#0d1117" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="1.9"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".5"/></filter>
+<filter id="glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="8"/></filter>
+<filter id="soft-glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="3"/></filter>
 </defs>
 <style>
-text {font-family:Arial,Helvetica,sans-serif;fill:#e0e6eb}
-.dim {fill:#97a6b3}
-.still {display:none}
-.float {animation:drift 12s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes drift {0%,100% {transform:translateY(0)}50% {transform:translateY(-8px)}}
-@media (prefers-reduced-motion:reduce) {.float {animation:none}.motion {display:none}.still {display:inline}}
-</style>
-<rect width="1200" height="120" fill="#0d1117"/>
-<text x="20" y="83" font-size="56" letter-spacing="-2">Activity</text>
-</svg>
+text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
+.label {fill:#8b949e;font-size:12px;letter-spacing:2.16px}
+.float {animation:float 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.breathe {animation:breathe 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.ripple {animation:ripple 4.5s linear infinite;transform-box:fill-box;transform-origin:center;opacity:0}
+.ripple-two {animation-delay:1.5s}
+.ripple-three {animation-delay:3s}
+.bubble {animation:bubble 5s ease-in-out infinite;opacity:0}
+.bubble-two {animation-delay:2.5s}
+.sheen {animation:sheen 7s ease-in-out infinite;opacity:0}
+.status {animation:status 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes float {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-9px) rotate(3deg)}}
+@keyframes breathe {0%,100% {transform:scale(.93);opacity:.8}50% {transform:scale(1.07);opacity:1}}
+@keyframes ripple {0% {transform:scale(.55);opacity:0}15% {opacity:.5}100% {transform:scale(2.1);opacity:0}}
+@keyframes bubble {0% {transform:translateY(15px);opacity:0}20% {opacity:.6}85% {opacity:.35}100% {transform:translateY(-45px);opacity:0}}
+@keyframes sheen {0%,58% {transform:translateX(-180px);opacity:0}63% {opacity:.48}87% {transform:translateX(940px);opacity:0}100% {transform:translateX(940px);opacity:0}}
+@keyframes status {0%,100% {transform:scale(.85);opacity:.5}50% {transform:scale(1.2);opacity:1}}
+@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
+</style><rect width="840" height="86" fill="#0d1117"/>
+<text x="20" y="62" font-size="36" letter-spacing="-1.3">Activity</text></svg>
