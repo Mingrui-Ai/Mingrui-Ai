@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="240" viewBox="0 0 840 240" role="img" aria-labelledby="title desc">
-<title id="title">EchoSoul</title><desc id="desc">EchoSoul: JavaFX desktop AI conversations with personas, multiple model providers and local history. Original conceptual illustration.</desc>
+<title id="title">EchoSoul</title><desc id="desc">EchoSoul: JavaFX desktop AI conversations with personas, multiple model providers and local history. Staggered waveform peaks suggest an AI voice. Original conceptual illustration; motion respects reduced-motion preferences.</desc>
 <defs>
 <linearGradient id="cyan-purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#818cf8"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
 <linearGradient id="gold-green" x2="1" y2="1"><stop stop-color="#fbbf24"/><stop offset=".45" stop-color="#f59e0b"/><stop offset="1" stop-color="#10b981"/></linearGradient>
@@ -15,8 +15,22 @@
 <style>
 text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 .label {fill:#8b949e;font-size:12px;letter-spacing:2.16px}
-.float {animation:float 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.breathe {animation:breathe 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float,.breathe,.orbit-outer,.orbit-inner,.wave-bar,.match-halo,.blink,.ripple,.status {transform-box:fill-box;transform-origin:center}
+.float {animation:float 3.8s ease-in-out infinite}
+.breathe {animation:breathe 2.5s ease-in-out infinite}
+.orbit-outer {animation:orbit-spin 10s linear infinite}
+.orbit-inner {animation:orbit-spin 16s linear infinite reverse}
+.orbit-light {animation:orbit-light 2.7s linear infinite;stroke-dasharray:6 94;stroke-linecap:round}
+.orbit-light-two {animation-duration:2.9s;animation-direction:reverse}
+.wave-bar {animation:voice 1.2s ease-in-out infinite}
+.circuit-light {animation:circuit 3s linear infinite;stroke-dasharray:9 105;stroke-linecap:round;opacity:0}
+.circuit-out {animation-delay:1.5s}
+.match-halo {animation:match 3s ease-out infinite;opacity:0}
+.blink {animation:blink 4s ease-in-out infinite}
+.phone-orbit {animation:orbit-light 4.8s linear infinite;stroke-dasharray:.6 99.4;stroke-linecap:round}
+.feed-card {animation:feed 3.6s ease-in-out infinite}
+.feed-two {animation-delay:.35s}
+.feed-three {animation-delay:.7s}
 .ripple {animation:ripple 4.5s linear infinite;transform-box:fill-box;transform-origin:center;opacity:0}
 .ripple-two {animation-delay:1.5s}
 .ripple-three {animation-delay:3s}
@@ -24,13 +38,20 @@ text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 .bubble-two {animation-delay:2.5s}
 .sheen {animation:sheen 7s ease-in-out infinite;opacity:0}
 .status {animation:status 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes float {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-9px) rotate(3deg)}}
-@keyframes breathe {0%,100% {transform:scale(.93);opacity:.8}50% {transform:scale(1.07);opacity:1}}
+@keyframes float {0%,100% {transform:translateY(0)}50% {transform:translateY(-12px)}}
+@keyframes breathe {0%,100% {transform:scale(.86);opacity:.62}50% {transform:scale(1.12);opacity:1}}
+@keyframes orbit-spin {from {transform:rotate(0deg)}to {transform:rotate(360deg)}}
+@keyframes orbit-light {from {stroke-dashoffset:0}to {stroke-dashoffset:-100}}
+@keyframes voice {0%,100% {transform:scaleY(.42)}35% {transform:scaleY(1.08)}65% {transform:scaleY(.65)}}
+@keyframes circuit {0% {stroke-dashoffset:12;opacity:0}12%,72% {opacity:1}100% {stroke-dashoffset:-100;opacity:0}}
+@keyframes match {0% {transform:scale(.9);opacity:0}18% {opacity:.65}85%,100% {transform:scale(1.52);opacity:0}}
+@keyframes blink {0%,90%,96%,100% {transform:scaleY(1)}93% {transform:scaleY(.1)}}
+@keyframes feed {0%,40%,100% {opacity:.73}18% {opacity:1}}
 @keyframes ripple {0% {transform:scale(.55);opacity:0}15% {opacity:.5}100% {transform:scale(2.1);opacity:0}}
 @keyframes bubble {0% {transform:translateY(15px);opacity:0}20% {opacity:.6}85% {opacity:.35}100% {transform:translateY(-45px);opacity:0}}
 @keyframes sheen {0%,58% {transform:translateX(-180px);opacity:0}63% {opacity:.48}87% {transform:translateX(940px);opacity:0}100% {transform:translateX(940px);opacity:0}}
 @keyframes status {0%,100% {transform:scale(.85);opacity:.5}50% {transform:scale(1.2);opacity:1}}
-@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
+@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen,.orbit-light,.circuit-light,.match-halo,.phone-orbit {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
 </style><rect width="840" height="240" fill="#0d1117"/>
 
 <g transform="translate(42 12)">
@@ -45,7 +66,17 @@ text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 <rect x="137" y="43" width="128" height="36" rx="11" fill="#22d3ee" fill-opacity=".85"/>
 <path d="M153 56H245M153 66H213" stroke="#cffafe" stroke-width="3" stroke-linecap="round"/>
 <rect x="83" y="91" width="139" height="43" rx="12" fill="#a855f7" fill-opacity=".7"/>
-<path d="M99 111H108L113 100L120 124L127 101L133 118L139 107L144 111H203" stroke="#e9d5ff" stroke-width="2" fill="none" stroke-linejoin="round"/>
+<path d="M99 112H103M201 112H207" stroke="#e9d5ff" stroke-width="2" stroke-linecap="round"/>
+<g fill="#e9d5ff">
+<rect class="wave-bar" x="109" y="106" width="3" height="12" rx="1.5"/>
+<rect class="wave-bar" x="121" y="101" width="3" height="22" rx="1.5" style="animation-delay:-.3s"/>
+<rect class="wave-bar" x="133" y="97" width="3" height="30" rx="1.5" style="animation-delay:-.65s"/>
+<rect class="wave-bar" x="145" y="103" width="3" height="18" rx="1.5" style="animation-delay:-.15s"/>
+<rect class="wave-bar" x="157" y="98" width="3" height="28" rx="1.5" style="animation-delay:-.5s"/>
+<rect class="wave-bar" x="169" y="102" width="3" height="20" rx="1.5" style="animation-delay:-.85s"/>
+<rect class="wave-bar" x="181" y="105" width="3" height="14" rx="1.5" style="animation-delay:-.4s"/>
+<rect class="wave-bar" x="193" y="108" width="3" height="8" rx="1.5" style="animation-delay:-.75s"/>
+</g>
 <path d="M87 150H253" stroke="#4c5570" stroke-width="4" stroke-linecap="round"/>
 </g><path d="M75 190Q176 217 295 177" fill="none" stroke="url(#cyan-purple)" stroke-width="2" opacity=".45"/>
 </g>

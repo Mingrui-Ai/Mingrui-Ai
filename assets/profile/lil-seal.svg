@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="240" viewBox="0 0 840 240" role="img" aria-labelledby="title desc">
-<title id="title">lil-seal</title><desc id="desc">lil-seal: a playful JavaScript web experiment. A pearl-white seal and two slowly rising ice-blue bubbles.</desc>
+<title id="title">lil-seal</title><desc id="desc">lil-seal: a playful JavaScript web experiment. A pearl-white seal blinks every four seconds beside two staggered, slowly rising ice-blue bubbles. Motion respects reduced-motion preferences.</desc>
 <defs>
 <linearGradient id="cyan-purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#818cf8"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
 <linearGradient id="gold-green" x2="1" y2="1"><stop stop-color="#fbbf24"/><stop offset=".45" stop-color="#f59e0b"/><stop offset="1" stop-color="#10b981"/></linearGradient>
@@ -15,8 +15,22 @@
 <style>
 text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 .label {fill:#8b949e;font-size:12px;letter-spacing:2.16px}
-.float {animation:float 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-.breathe {animation:breathe 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float,.breathe,.orbit-outer,.orbit-inner,.wave-bar,.match-halo,.blink,.ripple,.status {transform-box:fill-box;transform-origin:center}
+.float {animation:float 3.8s ease-in-out infinite}
+.breathe {animation:breathe 2.5s ease-in-out infinite}
+.orbit-outer {animation:orbit-spin 10s linear infinite}
+.orbit-inner {animation:orbit-spin 16s linear infinite reverse}
+.orbit-light {animation:orbit-light 2.7s linear infinite;stroke-dasharray:6 94;stroke-linecap:round}
+.orbit-light-two {animation-duration:2.9s;animation-direction:reverse}
+.wave-bar {animation:voice 1.2s ease-in-out infinite}
+.circuit-light {animation:circuit 3s linear infinite;stroke-dasharray:9 105;stroke-linecap:round;opacity:0}
+.circuit-out {animation-delay:1.5s}
+.match-halo {animation:match 3s ease-out infinite;opacity:0}
+.blink {animation:blink 4s ease-in-out infinite}
+.phone-orbit {animation:orbit-light 4.8s linear infinite;stroke-dasharray:.6 99.4;stroke-linecap:round}
+.feed-card {animation:feed 3.6s ease-in-out infinite}
+.feed-two {animation-delay:.35s}
+.feed-three {animation-delay:.7s}
 .ripple {animation:ripple 4.5s linear infinite;transform-box:fill-box;transform-origin:center;opacity:0}
 .ripple-two {animation-delay:1.5s}
 .ripple-three {animation-delay:3s}
@@ -24,13 +38,20 @@ text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 .bubble-two {animation-delay:2.5s}
 .sheen {animation:sheen 7s ease-in-out infinite;opacity:0}
 .status {animation:status 3s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
-@keyframes float {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-9px) rotate(3deg)}}
-@keyframes breathe {0%,100% {transform:scale(.93);opacity:.8}50% {transform:scale(1.07);opacity:1}}
+@keyframes float {0%,100% {transform:translateY(0)}50% {transform:translateY(-12px)}}
+@keyframes breathe {0%,100% {transform:scale(.86);opacity:.62}50% {transform:scale(1.12);opacity:1}}
+@keyframes orbit-spin {from {transform:rotate(0deg)}to {transform:rotate(360deg)}}
+@keyframes orbit-light {from {stroke-dashoffset:0}to {stroke-dashoffset:-100}}
+@keyframes voice {0%,100% {transform:scaleY(.42)}35% {transform:scaleY(1.08)}65% {transform:scaleY(.65)}}
+@keyframes circuit {0% {stroke-dashoffset:12;opacity:0}12%,72% {opacity:1}100% {stroke-dashoffset:-100;opacity:0}}
+@keyframes match {0% {transform:scale(.9);opacity:0}18% {opacity:.65}85%,100% {transform:scale(1.52);opacity:0}}
+@keyframes blink {0%,90%,96%,100% {transform:scaleY(1)}93% {transform:scaleY(.1)}}
+@keyframes feed {0%,40%,100% {opacity:.73}18% {opacity:1}}
 @keyframes ripple {0% {transform:scale(.55);opacity:0}15% {opacity:.5}100% {transform:scale(2.1);opacity:0}}
 @keyframes bubble {0% {transform:translateY(15px);opacity:0}20% {opacity:.6}85% {opacity:.35}100% {transform:translateY(-45px);opacity:0}}
 @keyframes sheen {0%,58% {transform:translateX(-180px);opacity:0}63% {opacity:.48}87% {transform:translateX(940px);opacity:0}100% {transform:translateX(940px);opacity:0}}
 @keyframes status {0%,100% {transform:scale(.85);opacity:.5}50% {transform:scale(1.2);opacity:1}}
-@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
+@media (prefers-reduced-motion:reduce) {* {animation:none!important}.sheen,.orbit-light,.circuit-light,.match-halo,.phone-orbit {display:none}.ripple {opacity:.16}.ripple-two {transform:scale(1.4)}.ripple-three {transform:scale(1.8)}.bubble {opacity:.4}}
 </style><rect width="840" height="240" fill="#0d1117"/>
 
 <g transform="translate(42 12)">
@@ -39,7 +60,7 @@ text {font-family:Arial,Helvetica,sans-serif;fill:#f8fafc}
 <path d="M372 251Q431 217 461 245Q450 281 389 278Z" fill="url(#pearl)"/>
 <path d="M174 258Q130 215 157 162Q174 109 230 107Q286 102 316 160Q333 188 376 204Q413 220 408 254Q398 283 300 280Q210 282 174 258Z" fill="url(#pearl)"/>
 <path d="M247 230Q286 224 314 265Q265 286 241 248Z" fill="#9edafa"/>
-<ellipse cx="186" cy="180" rx="5.5" ry="7" fill="#253644"/><ellipse cx="239" cy="178" rx="5.5" ry="7" fill="#253644"/>
+<ellipse class="blink" cx="186" cy="180" rx="5.5" ry="7" fill="#253644"/><ellipse class="blink" cx="239" cy="178" rx="5.5" ry="7" fill="#253644"/>
 <ellipse cx="211" cy="200" rx="8" ry="6" fill="#486374"/>
 <path d="M211 205Q204 217 197 210M211 205Q218 217 225 210M182 199L158 194M182 205L155 207M239 197L264 191M239 204L267 206" fill="none" stroke="#68899d" stroke-width="2"/>
 </g><g fill="none" stroke="#7dd3fc" stroke-width="1.3"><circle class="bubble" cx="57" cy="119" r="8"/><circle class="bubble bubble-two" cx="287" cy="97" r="5"/></g>

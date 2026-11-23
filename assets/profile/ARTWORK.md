@@ -11,11 +11,24 @@ illustrations are conceptual covers, not screenshots. LinuxDo is labeled as a fo
 Run `python scripts/build_profile.py` with Python 3 (standard library only).
 The SVGs are self-contained, with system fonts and no scripts or external assets.
 The hero uses pure SVG gradients, layered translucent orbits and CSS animation:
-six-second float/tilt, a three-second breathing core, three expanding ripples
-staggered by 1.5 seconds, and a restrained seven-second wordmark highlight.
-Two bubbles rise beside the seal. A teal contact dot breathes decoratively;
-it is not a real-time presence signal. `prefers-reduced-motion` disables these
-animations and keeps a static composition. There is no WebGL or cursor tracking.
+opposing 10- and 16-second orbit rotations, 2.7-/2.9-second traveling highlights,
+a 12px float over 3.8 seconds and a 2.5-second breathing core. Complete tracks
+are reused for the clipped foreground halves, preserving their centered pivots
+and synchronized motion. Three expanding water ripples remain staggered by
+1.5 seconds, with a restrained seven-second wordmark highlight.
+
+Project motion is local to each illustration, with one or two moving focal
+points per row: staggered voice peaks in EchoSoul; traveling circuit light and
+a three-second match halo for AI Job Search CN; two staggered rising bubbles
+and a quick four-second blink for lil-seal; a 4.8-second orbiting light and
+top-to-bottom card brightness wave for LinuxDo Android. The interfaces, text
+and project compositions stay still. All local CSS rotation and scaling use
+`transform-box: fill-box` and `transform-origin: center`.
+
+A teal contact dot breathes decoratively; it is not a real-time presence
+signal. `prefers-reduced-motion` disables all artwork animations and hides
+transient light effects while keeping the complete static composition.
+There is no WebGL or cursor tracking.
 
 The canvas is `#0d1117`, matching GitHub's default dark theme. Four 840×240 rows
 alternate illustration and text, with a low-contrast number, a 28px title and
