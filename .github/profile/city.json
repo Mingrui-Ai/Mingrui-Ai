@@ -1,0 +1,11 @@
+{
+  "type": "normal",
+  "fileName": "deepwater-city.svg",
+  "backgroundColor": "#070d18",
+  "foregroundColor": "#c6e4ff",
+  "strongColor": "#77d9ff",
+  "weakColor": "#6082a0",
+  "radarColor": "#299cff",
+  "growingAnimation": true,
+  "contribColors": ["#101e33", "#133a65", "#1768a1", "#21a8d8", "#85ecff"]
+}

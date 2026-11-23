@@ -1,0 +1,105 @@
+name: Deepwater daily visuals
+
+on:
+  schedule:
+    - cron: '23 20 * * *' # 04:23 Asia/Shanghai; GitHub may delay scheduled runs.
+  workflow_dispatch:
+  push:
+    branches: [main, feat/deepwater-v2]
+    paths:
+      - '.github/workflows/deepwater.yml'
+      - '.github/profile/**'
+      - 'scripts/refresh_dashboard.py'
+      - 'scripts/prepare_generated.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deepwater-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Generate blue contribution city
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: .github/profile/city.json
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/generated/deepwater-snake.svg?palette=github-dark&color_snake=#85ecff&color_dots=#101e33,#133a65,#1768a1,#21a8d8,#85ecff
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Generate lowlighter metrics
+        id: metrics
+        continue-on-error: true
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          user: ${{ github.repository_owner }}
+          filename: deepwater-metrics.svg
+          output_action: none
+          base: header, activity, community, repositories
+          repositories: 30
+          repositories_forks: no
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          config_padding: 28
+          plugin_languages: yes
+          plugin_languages_limit: 6
+          plugin_languages_details: percentage
+          plugin_languages_sections: most-used
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_charts: yes
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: X
+          plugin_achievements_limit: 6
+          plugin_achievements_only: polyglot, stargazer, developer, scripter, explorer, maintainer
+          plugin_activity_visibility: public
+          plugins_errors_fatal: yes
+          retries: 1
+          extras_css: |
+            :root {
+              --color-text: #c6e4ff;
+              --color-text-muted: #7795b1;
+              --color-text-accent: #77d9ff;
+              --color-background: #070d18;
+              --color-border: #19314d;
+            }
+            svg { background: #070d18; }
+            h1, h2, h3, strong { color: #d9f2ff !important; }
+      - name: Prepare and validate generated SVGs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROFILE_USER: ${{ github.repository_owner }}
+          METRICS_OUTCOME: ${{ steps.metrics.outcome }}
+        run: |
+          python scripts/refresh_dashboard.py
+          python scripts/prepare_generated.py
+      - name: Commit generated artwork
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/generated
+          if git diff --cached --quiet; then
+            echo 'Generated assets are already up to date.'
+            exit 0
+          fi
+          git commit -m 'chore(profile): refresh deepwater visuals [skip ci]'
+          git pull --rebase origin "$TARGET_BRANCH"
+          git push origin "HEAD:$TARGET_BRANCH"
