@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="64" viewBox="0 0 300 64" role="img" aria-labelledby="title desc">
+<title id="title">ACTIVITY</title><desc id="desc">ACTIVITY</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#0e2640"/><stop offset=".65" stop-color="#080f1c"/><stop offset="1" stop-color="#070d18"/></radialGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
+<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#070f1c"/><stop offset=".55" stop-color="#10243c"/><stop offset="1" stop-color="#17374e"/></linearGradient>
+<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset=".5" stop-color="#182444"/><stop offset="1" stop-color="#253a61"/></linearGradient>
+<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#061421"/><stop offset=".6" stop-color="#10324a"/><stop offset="1" stop-color="#1e5364"/></linearGradient>
+<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#07121c"/><stop offset=".55" stop-color="#142b45"/><stop offset="1" stop-color="#23435c"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#399fff" stop-opacity=".28"/><stop offset="1" stop-color="#399fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#c8f0ff" stop-opacity=".94"/><stop offset=".5" stop-color="#59a8cd" stop-opacity=".9"/><stop offset="1" stop-color="#183b65"/></linearGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000b1a" flood-opacity=".85"/><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#249fff" flood-opacity=".35"/></filter>
+<filter id="bloom" x="-.6" y="-.6" width="2.2" height="2.2"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="water" x="-.15" y="-.35" width="1.3" height="1.7" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="18s" values=".009 .025;.013 .035;.009 .025" repeatCount="indefinite"/></feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="waves" scale="16" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="12s" values="12;23;12" repeatCount="indefinite"/></feDisplacementMap>
+</filter>
+<linearGradient id="beam"><stop stop-color="#3ca7ff" stop-opacity="0"/><stop offset=".5" stop-color="#a9efff" stop-opacity=".9"/><stop offset="1" stop-color="#3ca7ff" stop-opacity="0"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<style>
+text {font-family:Arial,Helvetica,sans-serif;fill:#d7eeff}
+.mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
+.white {fill:#d7eeff}
+.dim {fill:#718eac}
+.accent {fill:#7edfff}
+.water-still {display:none}
+.float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}.water-motion{display:none}.water-still{display:inline}}
+</style>
+<rect width="300" height="64" fill="#070d18"/>
+    <text x="150" y="38" text-anchor="middle" class="mono" font-size="14">02 / ACTIVITY</text>
+    <path d="M26 60H274" stroke="#19314d"/>
+</svg>

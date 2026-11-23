@@ -39,12 +39,24 @@ jobs:
             assets/generated/deepwater-snake.svg?palette=github-dark&color_snake=#85ecff&color_dots=#101e33,#133a65,#1768a1,#21a8d8,#85ecff
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Check optional Metrics token
+        id: metrics_config
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: |
+          if [ -n "$METRICS_TOKEN" ]; then
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'enabled=false' >> "$GITHUB_OUTPUT"
+            echo 'Full Metrics awaits METRICS_TOKEN; updating the public-data dashboard instead.' >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Generate lowlighter metrics
         id: lowlighter_metrics
+        if: steps.metrics_config.outputs.enabled == 'true'
         continue-on-error: true
         uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
         with:
-          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ github.repository_owner }}
           filename: deepwater-metrics.svg
           output_action: none

@@ -24,7 +24,7 @@ else:
     # Never replace a dashboard with an error card or leave a broken image.
     shutil.copyfile(OUT / 'public-pulse.svg', OUT / 'metrics.svg')
     source = 'public GitHub REST fallback'
-    print('::warning::Metrics unavailable; published the daily public-data fallback. A scope-less METRICS_TOKEN can enable the full Metrics dashboard.')
+    print('Published the daily public-data dashboard. A scope-less classic METRICS_TOKEN enables the full Metrics dashboard.')
 for name in ('city.svg', 'deepwater-snake.svg', 'metrics.svg', 'public-pulse.svg'):
     path = OUT / name
     root = ET.parse(path).getroot()

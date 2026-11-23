@@ -1,30 +1,40 @@
-"""Build self-contained profile SVGs; Python 3 standard library only."""
+"""Build Deepwater v2: self-contained dark SVG artwork and water refraction."""
 from pathlib import Path
 from html import escape
 
 OUT = Path(__file__).resolve().parents[1] / 'assets' / 'profile'
 OUT.mkdir(parents=True, exist_ok=True)
 DEFS = '''<defs>
-<radialGradient id="paper"><stop stop-color="#fff"/><stop offset=".66" stop-color="#eeefec"/><stop offset="1" stop-color="#c5c9c8"/></radialGradient>
+<radialGradient id="paper"><stop stop-color="#0e2640"/><stop offset=".65" stop-color="#080f1c"/><stop offset="1" stop-color="#070d18"/></radialGradient>
 <linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
 <linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
-<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#173c39"/><stop offset=".55" stop-color="#2d7971"/><stop offset="1" stop-color="#a6d2bc"/></linearGradient>
-<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#29213f"/><stop offset=".5" stop-color="#77629d"/><stop offset="1" stop-color="#d1b7d4"/></linearGradient>
-<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#153e52"/><stop offset=".6" stop-color="#56a4ba"/><stop offset="1" stop-color="#b9e7dc"/></linearGradient>
-<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#642c19"/><stop offset=".55" stop-color="#bc643c"/><stop offset="1" stop-color="#f3c495"/></linearGradient>
-<radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#fff"/><stop offset=".7" stop-color="#e7f4ed"/><stop offset="1" stop-color="#abcac7"/></linearGradient>
-<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#0b1920" flood-opacity=".24"/></filter>
+<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#070f1c"/><stop offset=".55" stop-color="#10243c"/><stop offset="1" stop-color="#17374e"/></linearGradient>
+<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#0b1020"/><stop offset=".5" stop-color="#182444"/><stop offset="1" stop-color="#253a61"/></linearGradient>
+<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#061421"/><stop offset=".6" stop-color="#10324a"/><stop offset="1" stop-color="#1e5364"/></linearGradient>
+<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#07121c"/><stop offset=".55" stop-color="#142b45"/><stop offset="1" stop-color="#23435c"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#399fff" stop-opacity=".28"/><stop offset="1" stop-color="#399fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#c8f0ff" stop-opacity=".94"/><stop offset=".5" stop-color="#59a8cd" stop-opacity=".9"/><stop offset="1" stop-color="#183b65"/></linearGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000b1a" flood-opacity=".85"/><feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#249fff" flood-opacity=".35"/></filter>
+<filter id="bloom" x="-.6" y="-.6" width="2.2" height="2.2"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="water" x="-.15" y="-.35" width="1.3" height="1.7" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency=".009 .025" numOctaves="2" seed="12" result="waves"><animate attributeName="baseFrequency" dur="18s" values=".009 .025;.013 .035;.009 .025" repeatCount="indefinite"/></feTurbulence>
+<feDisplacementMap in="SourceGraphic" in2="waves" scale="16" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" dur="12s" values="12;23;12" repeatCount="indefinite"/></feDisplacementMap>
+</filter>
+<linearGradient id="beam"><stop stop-color="#3ca7ff" stop-opacity="0"/><stop offset=".5" stop-color="#a9efff" stop-opacity=".9"/><stop offset="1" stop-color="#3ca7ff" stop-opacity="0"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
 <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
 </defs>
 <style>
-text {font-family:Arial,Helvetica,sans-serif;fill:#202322}
+text {font-family:Arial,Helvetica,sans-serif;fill:#d7eeff}
 .mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
-.white {fill:#f5f5ef}
+.white {fill:#d7eeff}
+.dim {fill:#718eac}
+.accent {fill:#7edfff}
+.water-still {display:none}
 .float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 .float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
 @keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
-@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}}
+@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}.water-motion{display:none}.water-still{display:inline}}
 </style>'''
 
 
@@ -44,32 +54,41 @@ def shards():
     return ''.join(parts)
 
 
-svg('hero.svg', 1200, 570, 'Mingrui Ai — Computer Science & Artificial Intelligence', f'''
-<rect width="1200" height="570" fill="url(#paper)"/>
-<g opacity=".45" filter="url(#grain)"><rect width="1200" height="570" fill="transparent"/></g>
-<text x="36" y="55" font-size="28" letter-spacing="-1.6">mingrui<tspan font-family="Georgia,serif" font-style="italic" letter-spacing="-1"> ai</tspan><tspan font-size="11" dy="-13"> / </tspan></text>
-<text x="1164" y="48" text-anchor="end" font-size="12" class="mono">CODE · EXPERIMENT · BUILD</text>
-<g transform="translate(130 302) rotate(-30)" opacity=".64"><g class="float"><ellipse rx="89" ry="193" fill="none" stroke="url(#chrome)" stroke-width="37"/><ellipse rx="108" ry="211" fill="none" stroke="url(#edge)" stroke-width="2"/><ellipse rx="71" ry="175" fill="none" stroke="#fff" stroke-opacity=".65" stroke-width="2"/></g></g>
-<g transform="translate(1091 302) rotate(25)" opacity=".57"><g class="float-slow"><ellipse rx="74" ry="176" fill="none" stroke="url(#chrome)" stroke-width="44"/><ellipse rx="96" ry="198" fill="none" stroke="url(#edge)" stroke-width="2"/></g></g>
-{shards()}
-<text x="600" y="170" text-anchor="middle" class="mono" font-size="14">COMPUTER SCIENCE / ARTIFICIAL INTELLIGENCE</text>
-<text x="600" y="305" text-anchor="middle" font-size="120" letter-spacing="-8">Mingrui Ai</text>
-<text x="600" y="355" text-anchor="middle" font-size="25" letter-spacing="-.6">Ideas into experiences.</text>
-<rect x="440" y="395" width="320" height="35" rx="18" fill="#fff" fill-opacity=".65" stroke="#fff"/>
-<circle cx="461" cy="413" r="4" fill="#4b7669"/><text x="480" y="418" font-size="12" class="mono">LLM · AGENTS · FULL STACK</text>
-<path d="M36 506H1164" stroke="#9fa7a4" stroke-width=".8"/>
-<text x="36" y="539" font-size="12" class="mono">SOUTH CHINA AGRICULTURAL UNIVERSITY</text>
-<text x="1164" y="539" text-anchor="end" font-size="12" class="mono">SELECTED WORK ↓</text>
-''', 'A silver gallery with animated glass rings and floating prismatic fragments. Mingrui Ai explores computer science, LLMs, AI agents and full-stack development.')
+svg('hero.svg', 1200, 680, 'MINGRUI AI / DEEPWATER', '''
+<defs>
+<g id="name"><text x="600" y="265" text-anchor="middle" font-size="116" font-weight="500" letter-spacing="-6">MINGRUI AI</text></g>
+<g id="cube"><path d="M600 359L681 402L600 445L519 402Z" fill="#155b9a" fill-opacity=".85"/><path d="M519 402L600 445V524L519 481Z" fill="#0b2b57"/><path d="M600 445L681 402V481L600 524Z" fill="#124579"/><path d="M600 359L681 402V481L600 524L519 481V402ZM519 402L600 445L681 402M600 445V524" fill="none" stroke="#5ddaff" stroke-width="1.8"/><path d="M600 359L600 436M526 405L600 365L674 405" fill="none" stroke="#b3f4ff" stroke-opacity=".4"/></g>
+</defs>
+<rect width="1200" height="680" fill="#070d18"/>
+<ellipse cx="600" cy="470" rx="500" ry="235" fill="url(#glow)" opacity=".75"/>
+<text x="42" y="53" class="mono" font-size="16">mingrui / dev</text>
+<text x="1158" y="53" class="mono dim" text-anchor="end" font-size="12">DEEPWATER — VOL.02</text>
+<path d="M42 78H1158" stroke="#173047"/>
+<text x="600" y="149" text-anchor="middle" font-size="13" class="mono dim">COMPUTER SCIENCE / ARTIFICIAL INTELLIGENCE</text>
+<g class="water-motion" filter="url(#water)">
+<use href="#name" transform="translate(-2 1)" opacity=".5" stroke="#00cfff" stroke-width="1.5"/>
+<use href="#name" transform="translate(2 -1)" opacity=".35" stroke="#8765ff" stroke-width="1.2"/>
+<use href="#name"/>
+</g><g class="water-still"><use href="#name"/></g>
+<text x="600" y="313" text-anchor="middle" font-size="22" letter-spacing=".3" class="dim">Ideas beneath the surface.</text>
+<g class="float"><use href="#cube" filter="url(#bloom)" opacity=".6"/><use href="#cube"/></g>
+<g opacity=".15" class="water-motion" filter="url(#water)"><use href="#cube" transform="translate(0 830) scale(1 -.55)"/></g>
+<g fill="none" stroke="url(#beam)"><ellipse cx="600" cy="546" rx="252" ry="22" opacity=".8"/><ellipse cx="600" cy="546" rx="391" ry="45" opacity=".4"/><ellipse cx="600" cy="546" rx="535" ry="76" opacity=".15"/></g>
+<path d="M130 546H1070" stroke="url(#beam)" stroke-width="2"/>
+<g opacity=".22" class="water-motion" filter="url(#water)"><path d="M210 557Q450 545 700 560T1030 558M155 580Q500 567 720 583T1090 580M320 599Q600 586 878 602" fill="none" stroke="#3986b0" stroke-width="2"/></g>
+<circle cx="376" cy="382" r="1.5" fill="#6fd6ff"/><circle cx="835" cy="430" r="2" fill="#6fd6ff" opacity=".5"/><circle cx="914" cy="333" r="1" fill="#6fd6ff"/>
+<text x="42" y="651" class="mono dim" font-size="11">SCAU / LLM / AGENTS / FULL STACK</text>
+<text x="1158" y="651" class="mono accent" text-anchor="end" font-size="11">DIVE INTO THE WORK ↓</text>
+''', 'An ice-blue name refracts underwater using animated SVG turbulence and displacement. A luminous glass cube floats above blue water. Motion is replaced by a static name when reduced motion is preferred.')
 
 svg('projects.svg', 1200, 210, 'Selected Projects — four public repositories', '''
-<rect width="1200" height="210" fill="url(#paper)"/>
+<rect width="1200" height="210" fill="#070d18"/>
 <text x="600" y="89" text-anchor="middle" font-size="64" letter-spacing="-3.5">Selected Projects</text>
-<rect x="329" y="119" width="542" height="43" rx="22" fill="#fff" fill-opacity=".8"/>
-<rect x="336" y="125" width="83" height="31" rx="16" fill="#242625"/>
+<rect x="329" y="119" width="542" height="43" rx="22" fill="#0c192b" stroke="#1a3450"/>
+<rect x="336" y="125" width="83" height="31" rx="16" fill="#175487"/>
 <text x="377" y="146" text-anchor="middle" font-size="13" class="white">All 04</text>
 <text x="481" y="146" text-anchor="middle" font-size="13">AI / Agents 02</text>
-<path d="M551 130V151M725 130V151" stroke="#dedfdb"/>
+<path d="M551 130V151M725 130V151" stroke="#1a3450"/>
 <text x="639" y="146" text-anchor="middle" font-size="13">Experiment 01</text>
 <text x="795" y="146" text-anchor="middle" font-size="13">Open Source 01</text>
 <text x="600" y="192" text-anchor="middle" class="mono" font-size="11">A FEW THINGS I AM BUILDING &amp; EXPLORING</text>
@@ -77,15 +96,29 @@ svg('projects.svg', 1200, 210, 'Selected Projects — four public repositories',
 
 
 def card(name, title, category, number, bg, art, description):
+    palette = {
+        '#f8f4f0': '#10263f', '#c6bfd5': '#183955', '#e0d9e8': '#1d4262',
+        '#f1eee7': '#101d31', '#fff': '#18334c', '#d3e6d9': '#194466',
+        '#d1e4df': '#427f9f', '#0f2423': '#0a1525', '#9cb4a6': '#3a89bb',
+        '#355c51': '#123958', '#29483f': '#152c46', '#1b3730': '#0c2035',
+        '#4c6e60': '#254e72', '#749588': '#417898', '#72968b': '#417898',
+        '#c2b8c5': '#3d6483', '#5d4a72': '#17476d', '#27213b': '#0b1930',
+        '#baafce': '#387eaf', '#c6e6cf': '#80dfff', '#b1bdb5': '#3b6182',
+        '#e5b266': '#67cfff', '#b6d6c8': '#64b6d6', '#b2b5ad': '#244966',
+    }
+    for original, replacement in palette.items():
+        art = art.replace('"' + original + '"', '"' + replacement + '"')
     svg(name, 580, 444, title, f'''
-<rect width="580" height="444" fill="#eeefec"/>
+<rect width="580" height="444" fill="#070d18"/>
 <defs><clipPath id="art"><rect x="14" y="14" width="552" height="322"/></clipPath></defs>
 <g clip-path="url(#art)"><rect x="14" y="14" width="552" height="322" fill="url(#{bg})"/>{art}
 <text x="32" y="43" font-size="10" class="white mono">{number} / SELECTED WORK</text></g>
+<rect x="14" y="14" width="552" height="322" fill="none" stroke="#247db2" stroke-opacity=".6"/>
+<path d="M14 85V14H156M424 336H566V265" fill="none" stroke="#75d8ff" stroke-opacity=".7"/>
 <text x="16" y="377" font-size="30" letter-spacing="-1.2">{escape(title)}</text>
-<text x="16" y="405" font-size="18">{escape(category)}</text>
-<path d="M535 385L552 402M535 402H552V385" fill="none" stroke="#242625" stroke-width="2"/>
-<path d="M16 426H564" stroke="#525b57" stroke-width="1"/>
+<text x="16" y="405" font-size="18" class="dim">{escape(category)}</text>
+<path d="M535 385L552 402M535 402H552V385" fill="none" stroke="#76c9f6" stroke-width="2"/>
+<path d="M16 426H564" stroke="#19314d" stroke-width="1"/>
 ''', description)
 
 
@@ -166,12 +199,34 @@ card('linuxdo.svg', 'LinuxDo Android', 'Community client / Kotlin · Fork', '04'
 ''', "Mingrui Ai's fork of xuemk/linuxdo-android, a Kotlin Android client for LinuxDo. Conceptual interface illustration, not a product screenshot.")
 
 svg('contact.svg', 1200, 235, "Let's build something — mingrui.ai@outlook.com", '''
-<rect width="1200" height="235" fill="url(#paper)"/>
+<rect width="1200" height="235" fill="#070d18"/>
 <text x="42" y="50" font-size="12" class="mono">HAVE AN IDEA?</text>
 <text x="40" y="129" font-size="66" letter-spacing="-3">Let's build something.</text>
-<path d="M1087 68L1149 130M1087 130H1149V68" fill="none" stroke="#252a27" stroke-width="3"/>
-<path d="M42 164H1158" stroke="#9fa7a4"/>
+<path d="M1087 68L1149 130M1087 130H1149V68" fill="none" stroke="#77d9ff" stroke-width="3"/>
+<path d="M42 164H1158" stroke="#19314d"/>
 <text x="42" y="201" font-size="17">mingrui.ai@outlook.com</text>
 <text x="1158" y="201" text-anchor="end" font-size="12" class="mono">MINGRUI AI / ALWAYS EXPLORING</text>
 ''')
-print(f"Built {len(list(OUT.glob('*.svg')))} SVG assets in {OUT}")
+for filename, title, subtitle, index in [
+    ('city-heading.svg', 'A city built one commit at a time.', '365 DAYS / CONTRIBUTION TOPOGRAPHY', '02'),
+    ('snake-heading.svg', 'Follow the current.', 'CONTRIBUTIONS / IN MOTION', '03'),
+    ('metrics-heading.svg', 'Signals from the deep.', 'LANGUAGES / ACTIVITY / MILESTONES', '04'),
+]:
+    svg(filename, 1200, 150, title, f'''<rect width="1200" height="150" fill="#070d18"/>
+    <text x="42" y="41" class="mono accent" font-size="12">{index} / {subtitle}</text>
+    <text x="40" y="110" font-size="46" letter-spacing="-1.5">{title}</text>''')
+
+svg('about.svg', 1200, 315, 'Mingrui Ai — about & tools', '''
+<rect width="1200" height="315" fill="#070d18"/><path d="M42 28H1158" stroke="#19314d"/>
+<text x="42" y="72" class="mono accent" font-size="12">05 / THE PERSON BEHIND THE PROJECTS</text>
+<text x="42" y="129" font-size="40" letter-spacing="-1">Curious by nature. Building by choice.</text>
+<text x="42" y="172" font-size="20" class="dim">Mingrui Ai / Computer Science / South China Agricultural University</text>
+<text x="42" y="223" class="mono" font-size="14">JAVA · PYTHON · C/C++ · SQL</text>
+<text x="42" y="257" class="mono dim" font-size="14">VUE 3 · TYPESCRIPT · GIT · DOCKER</text>
+<text x="1158" y="257" text-anchor="end" class="mono accent" font-size="12">LLM / AI AGENTS / FULL STACK</text>
+''')
+for slug, label, index in [('projects', 'PROJECTS', '01'), ('activity', 'ACTIVITY', '02'), ('about', 'ABOUT', '03'), ('contact', 'CONTACT', '04')]:
+    svg(f'nav-{slug}.svg', 300, 64, label, f'''<rect width="300" height="64" fill="#070d18"/>
+    <text x="150" y="38" text-anchor="middle" class="mono" font-size="14">{index} / {label}</text>
+    <path d="M26 60H274" stroke="#19314d"/>''')
+print(f"Built {len(list(OUT.glob('*.svg')))} Deepwater SVG assets in {OUT}")
