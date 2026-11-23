@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="580" height="444" viewBox="0 0 580 444" role="img" aria-labelledby="title desc">
+<title id="title">EchoSoul</title><desc id="desc">EchoSoul: a JavaFX desktop chat app with persona-driven conversations, pluggable LLM providers, local history and optional speech. Conceptual interface illustration.</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#fff"/><stop offset=".66" stop-color="#eeefec"/><stop offset="1" stop-color="#c5c9c8"/></radialGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
+<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#173c39"/><stop offset=".55" stop-color="#2d7971"/><stop offset="1" stop-color="#a6d2bc"/></linearGradient>
+<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#29213f"/><stop offset=".5" stop-color="#77629d"/><stop offset="1" stop-color="#d1b7d4"/></linearGradient>
+<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#153e52"/><stop offset=".6" stop-color="#56a4ba"/><stop offset="1" stop-color="#b9e7dc"/></linearGradient>
+<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#642c19"/><stop offset=".55" stop-color="#bc643c"/><stop offset="1" stop-color="#f3c495"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#fff"/><stop offset=".7" stop-color="#e7f4ed"/><stop offset="1" stop-color="#abcac7"/></linearGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#0b1920" flood-opacity=".24"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<style>
+text {font-family:Arial,Helvetica,sans-serif;fill:#202322}
+.mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
+.white {fill:#f5f5ef}
+.float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}}
+</style>
+
+<rect width="580" height="444" fill="#eeefec"/>
+<defs><clipPath id="art"><rect x="14" y="14" width="552" height="322"/></clipPath></defs>
+<g clip-path="url(#art)"><rect x="14" y="14" width="552" height="322" fill="url(#mint)"/>
+<ellipse cx="400" cy="80" rx="280" ry="240" fill="url(#glow)"/>
+<g transform="translate(91 75) rotate(-7 202 120)"><g class="float" filter="url(#shadow)">
+<rect width="405" height="227" rx="10" fill="#0f2423" stroke="#9cb4a6" stroke-width="1.5"/>
+<path d="M0 28H405M112 28V227" stroke="#4f6b61" stroke-opacity=".6"/>
+<circle cx="14" cy="14" r="3" fill="#f0b4a0"/><circle cx="25" cy="14" r="3" fill="#e0cf93"/><circle cx="36" cy="14" r="3" fill="#abd0b2"/>
+<text x="202" y="18" text-anchor="middle" class="white" font-size="10">EchoSoul</text>
+<text x="16" y="54" class="white" font-size="11">Your personas</text>
+<rect x="9" y="67" width="94" height="31" rx="5" fill="#355c51"/>
+<circle cx="26" cy="82" r="9" fill="#b6d6c8"/><text x="43" y="86" class="white" font-size="9">Conversation</text>
+<path d="M17 119H86M17 138H70M17 157H80" stroke="#72968b" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+<text x="132" y="55" class="white" font-size="13">A little more human.</text>
+<rect x="179" y="77" width="205" height="33" rx="8" fill="#d3e6d9"/>
+<text x="192" y="98" font-size="10">Where should we begin?</text>
+<rect x="130" y="123" width="218" height="49" rx="8" fill="#29483f"/>
+<text x="142" y="143" class="white" font-size="10">With an idea. And a conversation.</text>
+<path d="M143 155H284" stroke="#749588" stroke-width="3" stroke-linecap="round"/>
+<rect x="130" y="188" width="256" height="24" rx="12" fill="#1b3730" stroke="#4c6e60"/>
+<text x="143" y="204" class="white" font-size="9">Say something...</text>
+<path d="M367 196L373 200L367 204" fill="none" stroke="#bdd9c9" stroke-width="1.5"/>
+</g></g><text x="39" y="315" font-size="10" class="white mono">LOCAL FIRST · MULTIPLE AI PROVIDERS</text>
+
+<text x="32" y="43" font-size="10" class="white mono">01 / SELECTED WORK</text></g>
+<text x="16" y="377" font-size="30" letter-spacing="-1.2">EchoSoul</text>
+<text x="16" y="405" font-size="18">Persona-driven AI / JavaFX</text>
+<path d="M535 385L552 402M535 402H552V385" fill="none" stroke="#242625" stroke-width="2"/>
+<path d="M16 426H564" stroke="#525b57" stroke-width="1"/>
+
+</svg>

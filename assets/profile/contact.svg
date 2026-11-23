@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="235" viewBox="0 0 1200 235" role="img" aria-labelledby="title desc">
+<title id="title">Let&#x27;s build something — mingrui.ai@outlook.com</title><desc id="desc">Let&#x27;s build something — mingrui.ai@outlook.com</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#fff"/><stop offset=".66" stop-color="#eeefec"/><stop offset="1" stop-color="#c5c9c8"/></radialGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#969d9d"/><stop offset=".16" stop-color="#f9ffff"/><stop offset=".28" stop-color="#bfcacb"/><stop offset=".38" stop-color="#fff"/><stop offset=".47" stop-color="#e1d8cb"/><stop offset=".5" stop-color="#8db9c7"/><stop offset=".53" stop-color="#d2d3f5"/><stop offset=".57" stop-color="#fff"/><stop offset=".72" stop-color="#9aa7a9"/><stop offset=".86" stop-color="#eef7f5"/><stop offset="1" stop-color="#b4b9b7"/></linearGradient>
+<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#fafbff"/><stop offset=".32" stop-color="#96d9ec"/><stop offset=".5" stop-color="#f8ccae"/><stop offset=".65" stop-color="#d0baf1"/><stop offset="1" stop-color="#fff"/></linearGradient>
+<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#173c39"/><stop offset=".55" stop-color="#2d7971"/><stop offset="1" stop-color="#a6d2bc"/></linearGradient>
+<linearGradient id="violet" x2="1" y2="1"><stop stop-color="#29213f"/><stop offset=".5" stop-color="#77629d"/><stop offset="1" stop-color="#d1b7d4"/></linearGradient>
+<linearGradient id="ice" x2="1" y2="1"><stop stop-color="#153e52"/><stop offset=".6" stop-color="#56a4ba"/><stop offset="1" stop-color="#b9e7dc"/></linearGradient>
+<linearGradient id="orange" x2="1" y2="1"><stop stop-color="#642c19"/><stop offset=".55" stop-color="#bc643c"/><stop offset="1" stop-color="#f3c495"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<linearGradient id="seal" x2=".6" y2="1"><stop stop-color="#fff"/><stop offset=".7" stop-color="#e7f4ed"/><stop offset="1" stop-color="#abcac7"/></linearGradient>
+<filter id="shadow" x="-.4" y="-.4" width="1.8" height="2"><feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#0b1920" flood-opacity=".24"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".63" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer><feBlend in="SourceGraphic" mode="soft-light"/></filter>
+</defs>
+<style>
+text {font-family:Arial,Helvetica,sans-serif;fill:#202322}
+.mono {font-family:'Courier New',monospace;letter-spacing:1.5px}
+.white {fill:#f5f5ef}
+.float {animation:drift 10s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.float-slow {animation:drift 14s ease-in-out -4s infinite;transform-box:fill-box;transform-origin:center}
+@keyframes drift {0%,100% {transform:translateY(0) rotate(-2deg)}50% {transform:translateY(-14px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce) {.float,.float-slow {animation:none}}
+</style>
+
+<rect width="1200" height="235" fill="url(#paper)"/>
+<text x="42" y="50" font-size="12" class="mono">HAVE AN IDEA?</text>
+<text x="40" y="129" font-size="66" letter-spacing="-3">Let's build something.</text>
+<path d="M1087 68L1149 130M1087 130H1149V68" fill="none" stroke="#252a27" stroke-width="3"/>
+<path d="M42 164H1158" stroke="#9fa7a4"/>
+<text x="42" y="201" font-size="17">mingrui.ai@outlook.com</text>
+<text x="1158" y="201" text-anchor="end" font-size="12" class="mono">MINGRUI AI / ALWAYS EXPLORING</text>
+
+</svg>
